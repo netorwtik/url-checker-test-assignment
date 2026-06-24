@@ -44,9 +44,14 @@ docker compose up --build
 npm run build
 npm run typecheck
 npm run lint
+npm run test
 ```
 
 ## API
+
+### `GET /api`
+
+Возвращает краткую информацию об API и доступных endpoints.
 
 ### `POST /api/jobs`
 

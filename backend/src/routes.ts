@@ -12,6 +12,18 @@ const createJobSchema = z.object({
 
 export const apiRouter = Router();
 
+apiRouter.get("/", (_req, res) => {
+  return res.json({
+    name: "URL Checker API",
+    endpoints: {
+      createJob: "POST /api/jobs",
+      listJobs: "GET /api/jobs",
+      getJob: "GET /api/jobs/:id",
+      cancelJob: "DELETE /api/jobs/:id"
+    }
+  });
+});
+
 apiRouter.post("/jobs", (req, res) => {
   const parsed = createJobSchema.safeParse(req.body);
   if (!parsed.success) {
